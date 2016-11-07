@@ -14,7 +14,7 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter {
     private List<Integer> mData = Arrays.asList(
-            1,2,3,5);
+            1, 2, 3, 4);
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

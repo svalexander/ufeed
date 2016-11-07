@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
     Adapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
