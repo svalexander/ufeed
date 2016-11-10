@@ -38,6 +38,7 @@ public class AddBookActivity extends AppCompatActivity {
             public void onClick(View view) {
                 title = titleTV.getText().toString(); //getting text input by user
                 //author = authorTV.getText().toString(); //getting text input by user
+//                Book book = new Book(title)
                 books.add(title);
                 set.addAll(books);
 

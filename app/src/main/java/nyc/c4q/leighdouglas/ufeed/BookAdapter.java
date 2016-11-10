@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -16,12 +15,17 @@ import java.util.Set;
  */
 
 public class BookAdapter extends RecyclerView.Adapter {
+//    private List<String> books;
 
+//    public void setBooks(List<Book> books){
+//        this.books = books;
+//    }
 
-    private List<String> mBook = Arrays.asList(
-            //should be new Book objects in here
-            "VALLEY OF THE DOLLS", "LORD OF THE FLIES", "FOR COLORED GIRLS", "Beloved", "IN THE TIME OF THE BUTTERFLIES"
-    );
+    public BookAdapter(List<String> books){
+        mBooks = books;
+    }
+
+    private List<String> mBooks = new ArrayList<>();
 
     //ArrayList<String> list = new ArrayList<String>();
 
@@ -34,7 +38,7 @@ public class BookAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         Set<String> set = new HashSet<>();
-        String book = "";
+//        String book = "";
         //set.add("test");
         //Log.d("here","true");
         //try {
@@ -44,39 +48,14 @@ public class BookAdapter extends RecyclerView.Adapter {
         //list.add(1,"jgh");
         Log.d("set",set.size()+1+"");
         BookCardViewHolder viewHolder = (BookCardViewHolder) holder;
-        List <String> list = new ArrayList<>(set);
+//        List <String> list = new ArrayList<>(set);
+        String book = mBooks.get(position);
+        viewHolder.bind(book);
 
-            for(int i = 0; i <list.size();i++) {
-               book = list.get(i);
-//
-                Log.d("book",book);
-                //mBook.add(book);
-                //list.addAll(book);
-
-                viewHolder.bind(book);
-
-            }
-
-//
-//
-//                Log.d("book","book");
-//
-//            }
-            //mBook.addAll(set);
-            //Log.d("here","true2");
-        //}
-         //catch (Exception e){
-            // Log.d("here","true3");
-             //Log.d("here",e.toString());
-        // }
-         //BookCardViewHolder viewHolder = (BookCardViewHolder) holder;
-         //String userBook = mBook.get(position);
-        //String userBook = set.get(position);
-         viewHolder.bind(book);
     }
 
     @Override
     public int getItemCount() {
-        return mBook.size();
+        return mBooks.size();
     }
 }
