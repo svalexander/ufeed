@@ -8,6 +8,6 @@ import android.widget.EditText;
 
 public class BookCard {
     //represents my card
- EditText editNotes;
+    EditText editNotes;
 
 }

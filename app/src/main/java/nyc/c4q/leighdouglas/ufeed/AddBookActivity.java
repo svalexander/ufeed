@@ -19,8 +19,8 @@ public class AddBookActivity extends AppCompatActivity {
     Button saveButton;
 
     String title, author;
-    Set <String> set = new HashSet<>();
-    List <String> books = new ArrayList<>();
+    Set<String> set = new HashSet<>(); //need a set for sharedpres, can't save a list in it
+    List<String> books = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,22 +33,22 @@ public class AddBookActivity extends AppCompatActivity {
         authorTV = (EditText) findViewById(R.id.add_author);
         saveButton = (Button) findViewById(R.id.add);
 
+        //this line adds all of the books added in the Onclick to the set so it appears when the activity is created
+        set = PreferenceManager.getDefaultSharedPreferences(AddBookActivity.this).getStringSet("books", set);
+
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 title = titleTV.getText().toString(); //getting text input by user
-                //author = authorTV.getText().toString(); //getting text input by user
-//                Book book = new Book(title)
                 books.add(title);
                 set.addAll(books);
 
+                //this must be here, it adds the book when you click the plus sign. w/o this here nothing appears
                 PreferenceManager.getDefaultSharedPreferences(AddBookActivity.this).edit().putStringSet("book", set).commit();
                 Intent intent = new Intent(AddBookActivity.this, BookRecyclerContent.class);
                 startActivity(intent);
             }
         });
-
-
 
 
     }

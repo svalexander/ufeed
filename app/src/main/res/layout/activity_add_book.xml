@@ -21,16 +21,26 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_add_book" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/add_book_tv"
+    android:text="@string/add_tv"
+    android:textAllCaps="true"
+    android:textStyle="bold"
+    android:textSize="40sp"
+    android:textColor="@color/orangeCream"
+    android:background="@color/paleOrange"
+    android:layout_weight="1"
+    android:gravity="center"/>
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:hint="title"
             android:id="@+id/add_title"
             android:layout_gravity="center"
@@ -38,27 +48,26 @@
 
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:hint="author"
             android:layout_gravity="center"
             android:id="@+id/add_author"
             android:layout_weight="1"/>
         <Button
             android:id="@+id/add"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
             android:text="@string/add"
-            android:layout_weight="1"/>
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_weight="0.25"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/corners"
+            />
 
 
     </LinearLayout>
-
-    <!--<android.support.design.widget.FloatingActionButton-->
-        <!--android:id="@+id/fab"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="bottom|end"-->
-        <!--android:layout_margin="@dimen/fab_margin"-->
-        <!--app:srcCompat="@android:drawable/ic_dialog_email" />-->
 
 </android.support.design.widget.CoordinatorLayout>

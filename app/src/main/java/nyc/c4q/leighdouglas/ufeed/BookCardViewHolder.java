@@ -1,5 +1,6 @@
 package nyc.c4q.leighdouglas.ufeed;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.widget.TextView;
  */
 
 public class BookCardViewHolder extends RecyclerView.ViewHolder {
-//add editText in the activity b4 the recyclerView
+    //add editText in the activity b4 the recyclerView
     private TextView bookTitle;
     private View view;
 
@@ -20,6 +21,7 @@ public class BookCardViewHolder extends RecyclerView.ViewHolder {
         super(inflateView(parent)); //calling the inflate view method which returns the container of our view
         view = itemView;
         bookTitle = (TextView) view.findViewById(R.id.card_text);
+
     }
 
     private static View inflateView(View parent) {
@@ -28,10 +30,16 @@ public class BookCardViewHolder extends RecyclerView.ViewHolder {
         return inflater.inflate(R.layout.recycled_card, (ViewGroup) parent, false);
     }
 
-    public void bind(String book){
+    public void bind(String book) {
 
         bookTitle.setText(book); //passes in the titles in the book arrayList
-
+        bookTitle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), BookActivity.class);
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
 }

@@ -29,7 +29,7 @@ public class BookRecyclerContent extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); //determines how content shows up
 
         Set<String> books = PreferenceManager.getDefaultSharedPreferences(this).getStringSet("book", null); //get the books here in bookrecycler
-        List booklist =new ArrayList();
+        List booklist = new ArrayList();
         booklist.addAll(books);
         recyclerView.setAdapter(adapter = new BookAdapter(booklist));
 
@@ -42,6 +42,6 @@ public class BookRecyclerContent extends AppCompatActivity {
             }
         });
     }
-    
+
 
 }

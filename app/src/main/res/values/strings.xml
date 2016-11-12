@@ -11,4 +11,6 @@
     <string name="title_activity_book_two">BookActivityTwo</string>
     <string name="title_activity_add_book">AddBookActivity</string>
     <string name="add">Add</string>
+    <string name="add_tv">Add a Book</string>
+    <string name="cardText">To Read</string>
 </resources>
