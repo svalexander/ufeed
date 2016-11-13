@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 public class CardViewHolder extends RecyclerView.ViewHolder {
 
     public CardViewHolder(ViewGroup parent) {
+
         super(inflateView(parent));
     }
 
