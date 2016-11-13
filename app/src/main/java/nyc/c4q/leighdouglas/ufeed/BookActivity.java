@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class BookActivity extends AppCompatActivity {
 
@@ -14,13 +15,14 @@ public class BookActivity extends AppCompatActivity {
     Button doneBtn;
     Button reReadBtn;
 
+    TextView thisBookTitleTV;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
         previousButton = (Button) findViewById(R.id.previous);
-
 
         previousButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,6 +31,9 @@ public class BookActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        thisBookTitleTV = (TextView) findViewById(R.id.this_book_title);
+        thisBookTitleTV.setText(getIntent().getExtras().getString("user book"));
+
 
     }
 

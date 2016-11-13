@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -19,7 +19,7 @@ public class AddBookActivity extends AppCompatActivity {
     Button saveButton;
 
     String title, author;
-    Set<String> set = new HashSet<>(); //need a set for sharedpres, can't save a list in it
+    Set<String> set = new LinkedHashSet<>(); //need a set for sharedpres, can't save a list in it
     List<String> books = new ArrayList<>();
 
     @Override
