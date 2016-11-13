@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +43,10 @@ public class AddBookActivity extends AppCompatActivity {
                 title = titleTV.getText().toString(); //getting text input by user
                 books.add(title);
                 set.addAll(books);
+
+                for (String book : set) {
+                    Log.d("DEBUG", book);
+                }
 
                 //this must be here, it adds the book when you click the plus sign. w/o this here nothing appears
                 PreferenceManager.getDefaultSharedPreferences(AddBookActivity.this).edit().putStringSet("book", set).commit();
