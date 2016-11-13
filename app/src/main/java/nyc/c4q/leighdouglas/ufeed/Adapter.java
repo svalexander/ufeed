@@ -14,16 +14,37 @@ import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter {
     private List<Integer> mData = Arrays.asList(
-            1,2,3,5);
+            1, 2, 3, 4);
+
+    @Override
+    public int getItemViewType(int position) {
+        switch(mData.get(position)){
+            case 0:
+                return 1;
+            case 1:
+                return 2;
+            case 2:
+                return 3;
+            default:
+
+        }
+        return super.getItemViewType(position);
+    }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new CardViewHolder(parent);
+        //return new CardViewHolder(parent);
+        switch(viewType){
+            case 1:
+                return new LeighViewHolder(parent);
+            default:
+                return new LeighViewHolder(parent);
+        }
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        CardViewHolder viewHolder = (CardViewHolder) holder;
+        LeighViewHolder viewHolder = (LeighViewHolder) holder;
         Integer myInteger = mData.get(position);
         viewHolder.bind(myInteger);
     }
