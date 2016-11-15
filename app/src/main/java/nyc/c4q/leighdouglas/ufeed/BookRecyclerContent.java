@@ -16,6 +16,7 @@ import java.util.Set;
 
 public class BookRecyclerContent extends AppCompatActivity {
     BookAdapter adapter;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class BookRecyclerContent extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.book_recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.book_recycler_view);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); //determines how content shows up
 

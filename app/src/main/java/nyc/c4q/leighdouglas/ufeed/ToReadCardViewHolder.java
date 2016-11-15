@@ -16,13 +16,14 @@ public class ToReadCardViewHolder extends RecyclerView.ViewHolder {
     BookAdapter adapter;
     TextView textView;
 
-    private static View inflateView(View parent) {
+    private static View inflateView(ViewGroup parent) {
         //inflate the view of viewHolder, returns its to the ViewHolder
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        return inflater.inflate(R.layout.shannon_card, (ViewGroup) parent, false);
+        return inflater.inflate(R.layout.shannon_card, parent, false);
     }
-    public ToReadCardViewHolder(View itemView) {
-        super(inflateView(itemView));
+    public ToReadCardViewHolder(ViewGroup parent) {
+        super(inflateView(parent));
+
         textView = (TextView) itemView.findViewById(R.id.tvid);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
