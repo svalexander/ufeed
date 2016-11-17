@@ -47,11 +47,15 @@ public class BookActivity extends AppCompatActivity {
 
             case R.id.to_read:
                 toReadBtn.setBackgroundColor(Color.parseColor("#ff80ff"));
+                doneBtn.setBackgroundColor(Color.TRANSPARENT);
+                reReadBtn.setBackgroundColor(Color.TRANSPARENT);
                 break;
             case R.id.done:
+                toReadBtn.setBackgroundColor(Color.TRANSPARENT);
                 doneBtn.setBackgroundColor(Color.parseColor("#ff80ff"));
                 break;
             case R.id.re_read:
+                toReadBtn.setBackgroundColor(Color.TRANSPARENT);
                 reReadBtn.setBackgroundColor(Color.parseColor("#ff80ff"));
                 doneBtn.setBackgroundColor(Color.parseColor("#ff80ff"));
                 break;
