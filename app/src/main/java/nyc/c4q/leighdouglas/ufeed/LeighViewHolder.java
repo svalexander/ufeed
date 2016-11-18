@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +27,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LeighViewHolder extends RecyclerView.ViewHolder{
+public class LeighViewHolder extends RecyclerView.ViewHolder {
     private WebView myWebView;
     private ImageView myImageView;
     public final String TAG = "Access Token";
@@ -37,7 +36,6 @@ public class LeighViewHolder extends RecyclerView.ViewHolder{
     private EditText userHashTag;
     private String hashTag;
     private Button submitHashTagBttn;
-    private Layout linearLayout;
     private String TAG1 = "user hashtag";
     private String TAG2 = "is it successful?";
     private Retrofit retrofit;
@@ -62,27 +60,25 @@ public class LeighViewHolder extends RecyclerView.ViewHolder{
         myWebView = (WebView) itemView.findViewById(R.id.my_web_view);
         userHashTag = (EditText) itemView.findViewById(R.id.hash_tag_editText);
         submitHashTagBttn = (Button) itemView.findViewById(R.id.submit_hashtag);
+        userHashTag.setVisibility(View.GONE);
+        submitHashTagBttn.setVisibility(View.GONE);
 
         if (!accessToken.equals("no token") && hashTag.equals("none")) {
             setHashTag();
-        } else if(!accessToken.equals("no token") && !hashTag.equals("none")){
+        } else if (!accessToken.equals("no token") && !hashTag.equals("none")) {
             setPicture();
         }
 
-        myWebView.loadUrl("https://api.instagram.com/oauth/authorize/?client_id=5c42e8e24ad64c10b53386daa642000d&redirect_uri=http://localhost/&response_type=token&scope=likes+comments+relationships+basic");
+        myWebView.loadUrl("https://api.instagram.com/oauth/authorize/?client_id=5c42e8e24ad64c10b53386daa642000d&redirect_uri=http://localhost/&response_type=token&scope=likes+comments+relationships+basic+public_content");
 
         myWebView.setWebViewClient(new WebViewClient() {
 
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if (url.contains("https://api.instagram.com/oauth/authorize/?client_id=5c42e8e24ad64c10b53386daa642000d&redirect_uri=http://localhost/&response_type=token&scope=likes+comments+relationships+basic")){
-                    return true;
-                }
-                if (url.contains("https://instagram.com/oauth/authorize/?client_id=5c42e8e24ad64c10b53386daa642000d&redirect_uri=http://localhost/&response_type=token&scope=likes+comments+relationships+basic")
-                        || !url.contains("https://www.instagram.com/accounts/login/?force_classic_login=&next=/oauth/authorize/%3Fclient_id%3D5c42e8e24ad64c10b53386daa642000d%26redirect_uri%3Dhttp%3A//localhost/%26response_type%3Dtoken%26scope%3Dlikes%2Bcomments%2Brelationships%2Bbasic")) {
-                    String accessToken = url.substring(31);
-                     Log.d(TAG, accessToken);
+                if (!url.contains("5c42e8e24ad64c10b53386daa642000")) {
+                    accessToken = url.substring(31);
+                    Log.d(TAG, accessToken);
                     SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
                     SharedPreferences.Editor editor = sharedPrefs.edit();
                     editor.putString("access token", accessToken);
@@ -92,8 +88,6 @@ public class LeighViewHolder extends RecyclerView.ViewHolder{
                 return false;
             }
         });
-
-
 
     }
 

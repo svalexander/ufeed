@@ -35,8 +35,13 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         switch(viewType){
             case 1:
                 return new LeighViewHolder(parent);
+<<<<<<< Updated upstream
             case 2:
                 return new ToReadCardViewHolder(parent);
+=======
+
+
+>>>>>>> Stashed changes
             default:
                 return new LeighViewHolder(parent);
         }
@@ -44,6 +49,7 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+<<<<<<< Updated upstream
 
         switch (getItemViewType(position)){
             case 1: LeighViewHolder viewHolder = (LeighViewHolder) holder;
@@ -56,10 +62,21 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             case 3:
         }
 
+=======
+        switch (getItemViewType(position)) {
+            case 1:
+                LeighViewHolder viewHolder = (LeighViewHolder) holder;
+                Integer myInteger = mData.get(position);
+                viewHolder.bind(myInteger);
+                break;
 
 
+
+
+
+        }
+>>>>>>> Stashed changes
     }
-
     @Override
     public int getItemCount() {
         return mData.size();

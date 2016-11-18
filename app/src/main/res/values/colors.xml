@@ -2,8 +2,12 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+<<<<<<< Updated upstream
     <color name="lightBlue">#00bfff</color>
     <color name="orangeCream">#ff8566</color>
     <color name="paleOrange"> #ffebe6</color>
+=======
+>>>>>>> Stashed changes
+    <color name="colorAccent">#FF8F00</color>
+    <color name="instaColor">#4DD0E1</color>
 </resources>
