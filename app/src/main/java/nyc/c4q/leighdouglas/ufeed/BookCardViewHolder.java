@@ -36,7 +36,7 @@ RecyclerView recyclerView;
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), BookActivity.class);
-                intent.putExtra("user book", book);
+                intent.putExtra(BookActivity.TAG, book);
                 view.getContext().startActivity(intent);
             }
         });
