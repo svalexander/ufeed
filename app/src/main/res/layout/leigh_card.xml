@@ -76,6 +76,7 @@
             >
 
             <ImageView
+                android:id="@+id/likes_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.2"
@@ -93,6 +94,7 @@
                 android:layout_gravity="center_vertical"/>
 
             <ImageView
+                android:id="@+id/comments_image_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/instagram_comment_png"
