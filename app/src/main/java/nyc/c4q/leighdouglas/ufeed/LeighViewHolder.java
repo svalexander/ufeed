@@ -2,6 +2,7 @@ package nyc.c4q.leighdouglas.ufeed;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.preference.PreferenceManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,6 +14,8 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -41,11 +44,18 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
     private Retrofit retrofit;
     private InstagramService service;
     private Context mContext;
+    private String likes;
+    private String comments;
+    private TextView likesTextView;
+    private TextView commentsTextView;
+    private ImageView likesImageView;
+    private ImageView commentsImageView;
+    private String noImageAvailableUrl;
 
     public LeighViewHolder(ViewGroup parent) {
         super(inflateView(parent));
         mContext = itemView.getContext();
-
+        noImageAvailableUrl = "http://www.cafonline.com/Portals/0/Images/no-available-image.png";
         retrofit = new Retrofit.Builder()
                 .baseUrl(InstagramService.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -57,11 +67,20 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
         hashTag = sharedPrefs.getString("users hashtag", "none");
         Log.d(TAG, accessToken);
         myImageView = (ImageView) itemView.findViewById(R.id.my_image_view);
+        commentsTextView = (TextView) itemView.findViewById(R.id.comments_text_view);
         myWebView = (WebView) itemView.findViewById(R.id.my_web_view);
         userHashTag = (EditText) itemView.findViewById(R.id.hash_tag_editText);
         submitHashTagBttn = (Button) itemView.findViewById(R.id.submit_hashtag);
+        likesTextView = (TextView) itemView.findViewById(R.id.likes_text_view);
+        commentsTextView = (TextView) itemView.findViewById(R.id.comments_text_view);
+        likesImageView = (ImageView) itemView.findViewById(R.id.likes_image_view);
+        commentsImageView = (ImageView) itemView.findViewById(R.id.comments_image_view);
         userHashTag.setVisibility(View.GONE);
         submitHashTagBttn.setVisibility(View.GONE);
+        commentsTextView.setVisibility(View.GONE);
+        likesTextView.setVisibility(View.GONE);
+        likesImageView.setVisibility(View.GONE);
+        commentsImageView.setVisibility(View.GONE);
 
         if (!accessToken.equals("no token") && hashTag.equals("none")) {
             setHashTag();
@@ -103,6 +122,8 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
                 editor.putString("users hashtag", hashTag);
                 editor.apply();
                 Log.d(TAG1, hashTag);
+                userHashTag.setHint(hashTag);
+                userHashTag.setText("");
 //                baseUrl = "https://api.instagram.com/v1/tags/" + hashTag + "/media/";
                 setPicture();
             }
@@ -113,7 +134,12 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
 //        userHashTag.setVisibility(View.GONE);
 //        submitHashTagBttn.setVisibility(View.GONE);
 
+        userHashTag.setHint(hashTag);
         myImageView.setVisibility(View.VISIBLE);
+        likesTextView.setVisibility(View.VISIBLE);
+        commentsTextView.setVisibility(View.VISIBLE);
+        likesImageView.setVisibility(View.VISIBLE);
+        commentsImageView.setVisibility(View.VISIBLE);
 
         Call<InstagramPojo> call = service.getInstagramImage(hashTag, accessToken);
 
@@ -124,12 +150,22 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
                     if (response.isSuccessful()) {
                         Log.d(TAG2, "Success: " + response.body().toString());
                         InstagramData[] instagramDataArray = response.body().getData();
-
+                        if (instagramDataArray.length == 0) {
+                            Log.d(TAG2, "array is null");
+                            Picasso.with(mContext).load(noImageAvailableUrl).into(myImageView);
+                            likesTextView.setText("");
+                            commentsTextView.setText("");
+                        } else {
                         for (int i = 0; i < instagramDataArray.length; i++) {
                             if (instagramDataArray[i].getType().equals("image")) {
-                                instagramImageUrl = instagramDataArray[i].getImages().getStandard_resolution().getUrl();
-                                Picasso.with(mContext).load(instagramImageUrl).into(myImageView);
-                                break;
+                                    instagramImageUrl = instagramDataArray[i].getImages().getStandard_resolution().getUrl();
+                                    Picasso.with(mContext).load(instagramImageUrl).into(myImageView);
+                                    likes = Integer.toString(instagramDataArray[i].getLikes().getCount());
+                                    comments = Integer.toString(instagramDataArray[i].getComments().getCount());
+                                    likesTextView.setText(likes);
+                                    commentsTextView.setText(comments);
+                                    break;
+                                }
                             }
                         }
 

@@ -16,7 +16,7 @@ public class Adapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemViewType(int position) {
-        switch(mData.get(position)){
+        switch (mData.get(position)) {
             case 0:
                 return 1;
             case 1:
@@ -32,7 +32,7 @@ public class Adapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //return new CardViewHolder(parent);
-        switch(viewType){
+        switch (viewType) {
             case 1:
                 return new LeighViewHolder(parent);
             case 2:
@@ -45,27 +45,20 @@ public class Adapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        switch (getItemViewType(position)){
-            case 1: LeighViewHolder viewHolder = (LeighViewHolder) holder;
-                Integer myInteger = mData.get(position);
-                viewHolder.bind(myInteger);
-                break;
-            case 2: ToReadCardViewHolder secondHolder = (ToReadCardViewHolder) holder;
-
-                break;
-            case 3:
-        }
-
         switch (getItemViewType(position)) {
             case 1:
                 LeighViewHolder viewHolder = (LeighViewHolder) holder;
                 Integer myInteger = mData.get(position);
                 viewHolder.bind(myInteger);
                 break;
+            case 2:
+                ToReadCardViewHolder secondHolder = (ToReadCardViewHolder) holder;
 
+                break;
+            case 3:
         }
-
     }
+
     @Override
     public int getItemCount() {
         return mData.size();

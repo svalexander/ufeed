@@ -36,7 +36,7 @@ public class BookActivity extends AppCompatActivity {
         userNotes.setText(inputNotes);
 
         savedNotes = (TextView) findViewById(R.id.saved_notes);
-        if (savedInstanceState != null){
+        if (savedInstanceState != null) {
             userNotes.setText(savedInstanceState.getString("notes"));
         }
 
