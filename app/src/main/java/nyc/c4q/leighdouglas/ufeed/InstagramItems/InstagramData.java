@@ -8,7 +8,7 @@ public class InstagramData {
     String type;
     InstagramImage images;
     InstagramLikes likes;
-
+    InstagramComments comments;
 
     public String getType() {
         return type;
@@ -32,5 +32,13 @@ public class InstagramData {
 
     public void setLikes(InstagramLikes likes) {
         this.likes = likes;
+    }
+
+    public InstagramComments getComments() {
+        return comments;
+    }
+
+    public void setComments(InstagramComments comments) {
+        this.comments = comments;
     }
 }

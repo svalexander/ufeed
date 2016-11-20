@@ -43,8 +43,9 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
     private InstagramService service;
     private Context mContext;
     private String likes;
-    private TextView likesEditText;
-
+    private String comments;
+    private TextView likesTextView;
+    private TextView commentsTextView;
 
     public LeighViewHolder(ViewGroup parent) {
         super(inflateView(parent));
@@ -61,12 +62,16 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
         hashTag = sharedPrefs.getString("users hashtag", "none");
         Log.d(TAG, accessToken);
         myImageView = (ImageView) itemView.findViewById(R.id.my_image_view);
+        commentsTextView = (TextView) itemView.findViewById(R.id.comments_text_view);
         myWebView = (WebView) itemView.findViewById(R.id.my_web_view);
         userHashTag = (EditText) itemView.findViewById(R.id.hash_tag_editText);
         submitHashTagBttn = (Button) itemView.findViewById(R.id.submit_hashtag);
-        likesEditText = (TextView) itemView.findViewById(R.id.likes_text_view);
+        likesTextView = (TextView) itemView.findViewById(R.id.likes_text_view);
+        commentsTextView = (TextView) itemView.findViewById(R.id.comments_text_view);
         userHashTag.setVisibility(View.GONE);
         submitHashTagBttn.setVisibility(View.GONE);
+        commentsTextView.setVisibility(View.GONE);
+        likesTextView.setVisibility(View.GONE);
 
         if (!accessToken.equals("no token") && hashTag.equals("none")) {
             setHashTag();
@@ -117,8 +122,11 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
     public void setPicture() {
 //        userHashTag.setVisibility(View.GONE);
 //        submitHashTagBttn.setVisibility(View.GONE);
+
         userHashTag.setHint(hashTag);
         myImageView.setVisibility(View.VISIBLE);
+        likesTextView.setVisibility(View.VISIBLE);
+        commentsTextView.setVisibility(View.VISIBLE);
 
         Call<InstagramPojo> call = service.getInstagramImage(hashTag, accessToken);
 
@@ -135,7 +143,9 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
                                 instagramImageUrl = instagramDataArray[i].getImages().getStandard_resolution().getUrl();
                                 Picasso.with(mContext).load(instagramImageUrl).into(myImageView);
                                 likes = Integer.toString(instagramDataArray[i].getLikes().getCount());
-                                likesEditText.setText(likes);
+                                comments = Integer.toString(instagramDataArray[i].getComments().getCount());
+                                likesTextView.setText(likes);
+                                commentsTextView.setText(comments);
                                 break;
                             }
                         }

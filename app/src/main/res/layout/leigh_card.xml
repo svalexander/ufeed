@@ -70,7 +70,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_below="@id/my_image_view"
-            android:layout_margin="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginLeft="12dp"
             >
 
             <ImageView
@@ -87,7 +89,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="10dp"
-                android:textSize="24dp"
+                android:textSize="22dp"
                 android:layout_gravity="center_vertical"/>
 
             <ImageView
@@ -96,6 +98,16 @@
                 android:src="@drawable/instagram_comment_png"
                 android:alpha="0.2"
                 />
+
+            <TextView
+                android:id="@+id/comments_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="22dp"
+                android:layout_gravity="center_vertical"/>
 
         </LinearLayout>
     </RelativeLayout>
