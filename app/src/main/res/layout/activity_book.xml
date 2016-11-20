@@ -15,14 +15,14 @@
         <TextView
             android:id="@+id/this_book_title"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="120dp"
             android:gravity="center"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textAllCaps="true"
             android:textColor="@color/instaColor"
             android:background="@color/paleOrange"
-            android:textStyle="bold"
+            android:textStyle="italic"
             android:textSize="40sp" />
 
         <TextView
