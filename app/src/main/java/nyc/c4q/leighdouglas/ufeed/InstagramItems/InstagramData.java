@@ -7,6 +7,7 @@ package nyc.c4q.leighdouglas.ufeed.InstagramItems;
 public class InstagramData {
     String type;
     InstagramImage images;
+    InstagramLikes likes;
 
 
     public String getType() {
@@ -23,5 +24,13 @@ public class InstagramData {
 
     public void setImages(InstagramImage images) {
         this.images = images;
+    }
+
+    public InstagramLikes getLikes() {
+        return likes;
+    }
+
+    public void setLikes(InstagramLikes likes) {
+        this.likes = likes;
     }
 }

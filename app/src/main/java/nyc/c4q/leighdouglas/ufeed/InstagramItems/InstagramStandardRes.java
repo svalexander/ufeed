@@ -7,11 +7,11 @@ package nyc.c4q.leighdouglas.ufeed.InstagramItems;
 public class InstagramStandardRes {
     private String url;
 
-    public void setUrl(String url){
+    public void setUrl(String url) {
         this.url = url;
     }
 
-    public String getUrl(){
+    public String getUrl() {
         return this.url;
     }
 }

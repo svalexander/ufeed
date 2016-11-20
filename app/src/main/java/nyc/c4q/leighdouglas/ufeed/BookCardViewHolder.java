@@ -16,12 +16,13 @@ public class BookCardViewHolder extends RecyclerView.ViewHolder {
     //add editText in the activity b4 the recyclerView
     private TextView bookTitleView;
     private View view;
-RecyclerView recyclerView;
+    RecyclerView recyclerView;
+
     public BookCardViewHolder(ViewGroup parent) {
         super(inflateView(parent)); //calling the inflate view method which returns the container of our view
         view = itemView;
         bookTitleView = (TextView) view.findViewById(R.id.recycled_card_title);
- //recyclerView = (RecyclerView) view.findViewById(R.id.book_recycler_view);
+        //recyclerView = (RecyclerView) view.findViewById(R.id.book_recycler_view);
     }
 
     private static View inflateView(View parent) {

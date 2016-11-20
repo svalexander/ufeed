@@ -13,6 +13,7 @@ import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -41,6 +42,9 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
     private Retrofit retrofit;
     private InstagramService service;
     private Context mContext;
+    private String likes;
+    private TextView likesEditText;
+
 
     public LeighViewHolder(ViewGroup parent) {
         super(inflateView(parent));
@@ -60,6 +64,7 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
         myWebView = (WebView) itemView.findViewById(R.id.my_web_view);
         userHashTag = (EditText) itemView.findViewById(R.id.hash_tag_editText);
         submitHashTagBttn = (Button) itemView.findViewById(R.id.submit_hashtag);
+        likesEditText = (TextView) itemView.findViewById(R.id.likes_text_view);
         userHashTag.setVisibility(View.GONE);
         submitHashTagBttn.setVisibility(View.GONE);
 
@@ -112,7 +117,7 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
     public void setPicture() {
 //        userHashTag.setVisibility(View.GONE);
 //        submitHashTagBttn.setVisibility(View.GONE);
-
+        userHashTag.setHint(hashTag);
         myImageView.setVisibility(View.VISIBLE);
 
         Call<InstagramPojo> call = service.getInstagramImage(hashTag, accessToken);
@@ -129,6 +134,8 @@ public class LeighViewHolder extends RecyclerView.ViewHolder {
                             if (instagramDataArray[i].getType().equals("image")) {
                                 instagramImageUrl = instagramDataArray[i].getImages().getStandard_resolution().getUrl();
                                 Picasso.with(mContext).load(instagramImageUrl).into(myImageView);
+                                likes = Integer.toString(instagramDataArray[i].getLikes().getCount());
+                                likesEditText.setText(likes);
                                 break;
                             }
                         }
