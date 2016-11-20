@@ -75,6 +75,7 @@ public class BookActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     public void onClick(View v) {

@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 public class ToReadCardViewHolder extends RecyclerView.ViewHolder {
 
-    BookAdapter adapter;
     TextView textView;
 
     private static View inflateView(ViewGroup parent) {

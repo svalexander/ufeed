@@ -49,7 +49,7 @@ public class AddBookActivity extends AppCompatActivity {
                 }
 
                 //this must be here, it adds the book when you click the plus sign. w/o this here nothing appears
-                PreferenceManager.getDefaultSharedPreferences(AddBookActivity.this).edit().putStringSet("book", set).commit();
+                PreferenceManager.getDefaultSharedPreferences(AddBookActivity.this).edit().putStringSet("book", set).apply();
                 Intent intent = new Intent(AddBookActivity.this, BookRecyclerContent.class);
                 startActivity(intent);
             }
