@@ -7,4 +7,5 @@
     <color name="paleOrange"> #ffebe6</color>
     <color name="colorAccent">#FF8F00</color>
     <color name="instaColor">#4DD0E1</color>
+    <color name="buttonChange">#ff80ff</color>
 </resources>
