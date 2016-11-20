@@ -2,7 +2,6 @@ package nyc.c4q.leighdouglas.ufeed;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -75,6 +74,7 @@ public class BookActivity extends AppCompatActivity {
 
             }
         });
+
     }
 
     public void onClick(View v) {
@@ -86,18 +86,19 @@ public class BookActivity extends AppCompatActivity {
         switch (v.getId()) {
 
             case R.id.to_read:
-                toReadBtn.setBackgroundColor(Color.parseColor("#ff80ff"));
-                doneBtn.setBackgroundColor(Color.TRANSPARENT);
-                reReadBtn.setBackgroundColor(Color.TRANSPARENT);
+                toReadBtn.setBackgroundResource(R.drawable.button_change);
+                doneBtn.setBackgroundResource(R.drawable.corners);
+                reReadBtn.setBackgroundResource(R.drawable.corners);
                 break;
             case R.id.done:
-                toReadBtn.setBackgroundColor(Color.TRANSPARENT);
-                doneBtn.setBackgroundColor(Color.parseColor("#ff80ff"));
+                toReadBtn.setBackgroundResource(R.drawable.corners);
+                reReadBtn.setBackgroundResource(R.drawable.corners);
+                doneBtn.setBackgroundResource(R.drawable.button_change);
                 break;
             case R.id.re_read:
-                toReadBtn.setBackgroundColor(Color.TRANSPARENT);
-                reReadBtn.setBackgroundColor(Color.parseColor("#ff80ff"));
-                doneBtn.setBackgroundColor(Color.parseColor("#ff80ff"));
+                toReadBtn.setBackgroundResource(R.drawable.corners);
+                reReadBtn.setBackgroundResource(R.drawable.button_change);
+                doneBtn.setBackgroundResource(R.drawable.button_change);
                 break;
         }
     }

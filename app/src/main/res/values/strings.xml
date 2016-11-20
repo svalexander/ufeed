@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">UFeed</string>
     <string name="title_hint">Title</string>
-    <string name="notes_hint">Notes</string>
+    <string name="notes_hint">Input Notes</string>
     <string name="read">To Read</string>
     <string name="done">Done</string>
     <string name="re_read">Re-Read</string>
@@ -13,4 +13,5 @@
     <string name="add">Add</string>
     <string name="add_tv">Add a Book</string>
     <string name="cardText">To Read</string>
+    <string name="no_notes">No Saved Notes</string>
 </resources>

@@ -33,7 +33,7 @@
     android:textAllCaps="true"
     android:textStyle="bold"
     android:textSize="40sp"
-    android:textColor="@color/orangeCream"
+    android:textColor="@color/instaColor"
     android:background="@color/paleOrange"
     android:layout_weight="1"
     android:gravity="center"/>

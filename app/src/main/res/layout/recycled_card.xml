@@ -8,12 +8,17 @@
     app:cardCornerRadius="4dp">
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="40sp"
+            android:textAllCaps="true"
+            android:textStyle="italic"
+            android:textColor="@color/instaColor"
             android:id="@+id/recycled_card_title" />
     </LinearLayout>
 
