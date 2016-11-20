@@ -13,7 +13,7 @@ import java.util.List;
 public class Adapter extends RecyclerView.Adapter {
     private List<Integer> mData = Arrays.asList(
             1, 2, 3 );
-    
+
     @Override
     public int getItemViewType(int position) {
         switch (mData.get(position)) {

@@ -11,6 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -29,7 +30,7 @@ public class BookRecyclerContent extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); //determines how content shows up
 
-        Set<String> books = PreferenceManager.getDefaultSharedPreferences(this).getStringSet("book", null); //get the books here in bookrecycler
+        Set<String> books = PreferenceManager.getDefaultSharedPreferences(this).getStringSet("book", new HashSet<String>()); //get the books here in bookrecycler
         List booklist = new ArrayList();
         booklist.addAll(books);
         recyclerView.setAdapter(adapter = new BookAdapter(booklist));
