@@ -35,7 +35,7 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:src="@drawable/city_image"
-                    android:alpha="0.6"/>
+                    android:alpha="0.8"/>
 
             </RelativeLayout>
 
