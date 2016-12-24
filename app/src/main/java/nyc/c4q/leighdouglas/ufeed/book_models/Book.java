@@ -1,4 +1,4 @@
-package nyc.c4q.leighdouglas.ufeed;
+package nyc.c4q.leighdouglas.ufeed.book_models;
 
 /**
  * Created by shannonalexander-navarro on 11/5/16.

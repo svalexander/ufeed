@@ -1,4 +1,4 @@
-package nyc.c4q.leighdouglas.ufeed;
+package nyc.c4q.leighdouglas.ufeed.book_code;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import nyc.c4q.leighdouglas.ufeed.R;
 
 public class BookRecyclerContent extends AppCompatActivity {
     BookAdapter adapter;

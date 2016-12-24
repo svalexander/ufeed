@@ -1,4 +1,4 @@
-package nyc.c4q.leighdouglas.ufeed;
+package nyc.c4q.leighdouglas.ufeed.book_code;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
