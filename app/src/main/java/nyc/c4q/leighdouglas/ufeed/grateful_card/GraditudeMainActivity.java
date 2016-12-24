@@ -1,7 +1,9 @@
 package nyc.c4q.leighdouglas.ufeed.grateful_card;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import nyc.c4q.leighdouglas.ufeed.R;
 
 public class GraditudeMainActivity extends AppCompatActivity {
 
