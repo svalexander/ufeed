@@ -1,4 +1,4 @@
-package nyc.c4q.leighdouglas.ufeed.grateful_card;
+package nyc.c4q.leighdouglas.ufeed.grateful_card.gratitude_model;
 
 /**
  * Created by shannonalexander-navarro on 12/23/16.
