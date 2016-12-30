@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class BookRecyclerContent extends AppCompatActivity {
+public class BookRecyclerContentActivity extends AppCompatActivity {
     BookAdapter adapter;
     RecyclerView recyclerView;
 
@@ -39,7 +39,7 @@ public class BookRecyclerContent extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BookRecyclerContent.this, AddBookActivity.class);
+                Intent intent = new Intent(BookRecyclerContentActivity.this, AddBookActivity.class);
                 startActivity(intent);
             }
         });

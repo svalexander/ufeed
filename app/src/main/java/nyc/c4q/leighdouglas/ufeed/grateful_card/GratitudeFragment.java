@@ -23,7 +23,7 @@ public class GratitudeFragment extends Fragment {
 
     List<GratitudeCard> gratefulList = new ArrayList<>();
     RecyclerView gratitudeRV;
-    GratitudeAdapter gratitudeAdapter;
+    GratitudeCardAdapter gratitudeAdapter;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,9 +36,10 @@ public class GratitudeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.gratitude_fragment, container, false);
 
+
         gratitudeRV = (RecyclerView) root.findViewById(R.id.gratitudeRv);
         gratitudeRV.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-        gratitudeAdapter = new GratitudeAdapter(gratefulList);
+        gratitudeAdapter = new GratitudeCardAdapter(gratefulList);
         gratitudeRV.setAdapter(gratitudeAdapter);
         return root;
     }

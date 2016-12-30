@@ -13,7 +13,7 @@ import android.widget.TextView;
 
 public class ToReadCardViewHolder extends RecyclerView.ViewHolder {
 
-    TextView textView;
+    private TextView textView;
 
     private static View inflateView(ViewGroup parent) {
         //inflate the view of viewHolder, returns its to the ViewHolder
@@ -27,7 +27,7 @@ public class ToReadCardViewHolder extends RecyclerView.ViewHolder {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), BookRecyclerContent.class);
+                Intent intent = new Intent(view.getContext(), BookRecyclerContentActivity.class);
                 view.getContext().startActivity(intent);
 
             }

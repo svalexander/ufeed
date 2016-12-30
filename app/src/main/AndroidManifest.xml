@@ -22,7 +22,7 @@
         </activity>
         g
         <activity
-            android:name=".BookRecyclerContent"
+            android:name=".BookRecyclerContentActivity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -34,7 +34,7 @@
             android:label="@string/title_activity_add_book"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".BookActivity" />
-        <activity android:name=".grateful_card.GraditudeMainActivity"></activity>
+        <activity android:name=".grateful_card.GratitudeMainActivity"></activity>
     </application>
 
 </manifest>

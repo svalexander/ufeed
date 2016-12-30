@@ -1,96 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/grat_item"
+    android:orientation="vertical">
+
     <TextView
         android:id="@+id/promptTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/prompt"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/green"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-<EditText
-    android:id="@+id/date"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/firstET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/secondET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/thirdET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/fourthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/fifthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/sixthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/seventhET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/eighthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/ninthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <EditText
         android:id="@+id/tenthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_first"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_second"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_third"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_fourth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_fifth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_sixth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_seventh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_eighth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_ninth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/saved_tenth"
         android:layout_width="match_parent"

@@ -52,7 +52,7 @@ public class BookActivity extends AppCompatActivity {
         previousButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BookActivity.this, BookRecyclerContent.class);
+                Intent intent = new Intent(BookActivity.this, BookRecyclerContentActivity.class);
                 startActivity(intent);
             }
         });

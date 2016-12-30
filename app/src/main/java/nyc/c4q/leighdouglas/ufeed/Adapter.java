@@ -35,7 +35,7 @@ public class Adapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //return new CardViewHolder(parent);
+
         switch (viewType) {
             case 1:
                 return new LeighViewHolder(parent);
@@ -63,6 +63,7 @@ public class Adapter extends RecyclerView.Adapter {
                 break;
             case 3:
                 GratitudeViewHolder thirdHolder = (GratitudeViewHolder) holder;
+
                 break;
         }
     }
