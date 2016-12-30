@@ -6,13 +6,15 @@ import android.view.ViewGroup;
 import java.util.Arrays;
 import java.util.List;
 
+import nyc.c4q.leighdouglas.ufeed.grateful_card.GratitudeViewHolder;
+
 /**
  * Created by leighdouglas on 10/30/16.
  */
 
 public class Adapter extends RecyclerView.Adapter {
     private List<Integer> mData = Arrays.asList(
-            1, 2, 3 );
+            1, 2, 3, 4 );
 
     @Override
     public int getItemViewType(int position) {
@@ -23,6 +25,8 @@ public class Adapter extends RecyclerView.Adapter {
                 return 2;
             case 2:
                 return 3;
+            case 3:
+                return 4;
             default:
 
         }
@@ -37,6 +41,8 @@ public class Adapter extends RecyclerView.Adapter {
                 return new LeighViewHolder(parent);
             case 2:
                 return new ToReadCardViewHolder(parent);
+            case 3:
+                return new GratitudeViewHolder(parent);
             default:
                 return new LeighViewHolder(parent);
         }
@@ -56,6 +62,8 @@ public class Adapter extends RecyclerView.Adapter {
 
                 break;
             case 3:
+                GratitudeViewHolder thirdHolder = (GratitudeViewHolder) holder;
+                break;
         }
     }
 

@@ -12,43 +12,43 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/firstEV"
+        android:id="@+id/firstET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/secondEV"
+        android:id="@+id/secondET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/thirdEV"
+        android:id="@+id/thirdET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/fourthEV"
+        android:id="@+id/fourthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/fifthEV"
+        android:id="@+id/fifthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/sixthEV"
+        android:id="@+id/sixthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/seventhEV"
+        android:id="@+id/seventhET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/eighthEV"
+        android:id="@+id/eighthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/ninthEV"
+        android:id="@+id/ninthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:id="@+id/tenthEV"
+        android:id="@+id/tenthET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
