@@ -16,10 +16,8 @@ import nyc.c4q.leighdouglas.ufeed.grateful_card.gratitude_model.GratitudeCard;
 public class GratitudeCardViewHolder extends RecyclerView.ViewHolder {
 
     private FrameLayout layout;
-    private TextView promptTV;
-    private TextView dateTV;
-    private TextView firstTV;
-    private TextView secondTV;
+  //  private TextView promptTV;
+    private TextView dateTV, firstTV, secondTV;
     private TextView thirdTV;
     private TextView fourthTV;
     private TextView fifthTV;
@@ -46,24 +44,24 @@ public class GratitudeCardViewHolder extends RecyclerView.ViewHolder {
     }
 
 
-    public void bind(GratitudeCard things) {
+    public void bind(GratitudeCard gratitudeCard) {
 
-        dateTV.setText(things.getDate());
-        firstTV.setText(things.getFirst());
-        secondTV.setText(things.getSecond());
-        thirdTV.setText(things.getThird());
-        fourthTV.setText(things.getFourth());
-        fifthTV.setText(things.getFifth());
-        sixthTV.setText(things.getSixth());
-        seventhTV.setText(things.getSeventh());
-        eighthTV.setText(things.geteighth());
-        ninthTV.setText(things.getNinth());
-        tenthTV.setText(things.getTenth());
+        dateTV.setText(gratitudeCard.getDate());
+        firstTV.setText(gratitudeCard.getFirst());
+        secondTV.setText(gratitudeCard.getSecond());
+        thirdTV.setText(gratitudeCard.getThird());
+        fourthTV.setText(gratitudeCard.getFourth());
+        fifthTV.setText(gratitudeCard.getFifth());
+        sixthTV.setText(gratitudeCard.getSixth());
+        seventhTV.setText(gratitudeCard.getSeventh());
+        eighthTV.setText(gratitudeCard.geteighth());
+        ninthTV.setText(gratitudeCard.getNinth());
+        tenthTV.setText(gratitudeCard.getTenth());
     }
 
     private void initViews() {
         layout = (FrameLayout) itemView.findViewById(R.id.grat_item);
-        promptTV = (TextView) itemView.findViewById(R.id.promptTV);
+       // promptTV = (TextView) itemView.findViewById(promptTV);
         dateTV = (TextView) itemView.findViewById(R.id.saved_date);
         firstTV = (TextView) itemView.findViewById(R.id.saved_first);
         secondTV = (TextView) itemView.findViewById(R.id.saved_second);

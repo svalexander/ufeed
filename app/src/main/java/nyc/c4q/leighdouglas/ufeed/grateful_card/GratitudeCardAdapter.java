@@ -17,10 +17,10 @@ import nyc.c4q.leighdouglas.ufeed.grateful_card.gratitude_model.GratitudeCard;
 
 public class GratitudeCardAdapter extends RecyclerView.Adapter {
 
-    List<GratitudeCard> gratitudeCardList = new ArrayList<>();
+    List<GratitudeCard> gratefulList = new ArrayList<>();
 
     public GratitudeCardAdapter(List<GratitudeCard> gratefulList) {
-        this.gratitudeCardList = gratefulList;
+        this.gratefulList = gratefulList;
     }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -28,21 +28,16 @@ public class GratitudeCardAdapter extends RecyclerView.Adapter {
         return new GratitudeCardViewHolder(itemView);
     }
 
-//    @Override
-//    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//        return new GratitudeCardViewHolder(parent);
-//    }
-
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         GratitudeCardViewHolder viewHolder = (GratitudeCardViewHolder) holder;
 
-        GratitudeCard things = gratitudeCardList.get(position);
-        viewHolder.bind(things);
+        GratitudeCard gratitudeCard = gratefulList.get(position);
+        viewHolder.bind(gratitudeCard);
     }
 
     @Override
     public int getItemCount() {
-        return gratitudeCardList.size();
+        return gratefulList.size();
     }
 }
