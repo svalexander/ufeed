@@ -15,4 +15,5 @@
     <string name="cardText">To Read</string>
     <string name="no_notes">No Saved Notes</string>
     <string name="prompt">What were 10 things you were grateful for today?</string>
+    <string name="grateful">I\'m grateful for</string>
 </resources>

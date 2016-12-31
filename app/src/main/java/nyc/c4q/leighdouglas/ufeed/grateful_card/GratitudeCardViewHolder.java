@@ -15,7 +15,7 @@ import nyc.c4q.leighdouglas.ufeed.grateful_card.gratitude_model.GratitudeCard;
 public class GratitudeCardViewHolder extends RecyclerView.ViewHolder {
 
     private FrameLayout layout;
-  //  private TextView promptTV;
+    //  private TextView promptTV;
     private TextView dateTV, firstTV, secondTV;
     private TextView thirdTV;
     private TextView fourthTV;
@@ -53,14 +53,14 @@ public class GratitudeCardViewHolder extends RecyclerView.ViewHolder {
         fifthTV.setText(gratitudeCard.getFifth());
         sixthTV.setText(gratitudeCard.getSixth());
         seventhTV.setText(gratitudeCard.getSeventh());
-        eighthTV.setText(gratitudeCard.geteighth());
+        eighthTV.setText(gratitudeCard.getEighth());
         ninthTV.setText(gratitudeCard.getNinth());
         tenthTV.setText(gratitudeCard.getTenth());
     }
 
     private void initViews() {
         layout = (FrameLayout) itemView.findViewById(R.id.grat_item);
-       // promptTV = (TextView) itemView.findViewById(promptTV);
+        // promptTV = (TextView) itemView.findViewById(promptTV);
         dateTV = (TextView) itemView.findViewById(R.id.saved_date);
         firstTV = (TextView) itemView.findViewById(R.id.saved_first);
         secondTV = (TextView) itemView.findViewById(R.id.saved_second);

@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/creamBlue"
-        android:text="@string/prompt"
+        android:text="@string/grateful"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@color/green"

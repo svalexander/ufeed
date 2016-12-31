@@ -22,6 +22,7 @@ public class GratitudeCardAdapter extends RecyclerView.Adapter {
     public GratitudeCardAdapter(List<GratitudeCard> gratefulList) {
         this.gratefulList = gratefulList;
     }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.gratitude_item, parent, false);

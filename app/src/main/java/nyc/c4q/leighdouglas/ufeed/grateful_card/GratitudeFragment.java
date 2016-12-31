@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 
 import nyc.c4q.leighdouglas.ufeed.R;
+import nyc.c4q.leighdouglas.ufeed.grateful_card.gratitude_model.GratitudeCard;
+
+import static nl.qbusict.cupboard.CupboardFactory.cupboard;
 
 /**
  * Created by shannonalexander-navarro on 12/23/16.
@@ -31,6 +34,8 @@ public class GratitudeFragment extends Fragment {
     private EditText ninthET;
     private EditText tenthET;
     CoordinatorLayout layout;
+  //  GratitudeDatabaseHelper dbHelper;
+//    private SQLiteDatabase gratitudeDatabase;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -58,6 +63,8 @@ public class GratitudeFragment extends Fragment {
         eighthET = (EditText) root.findViewById(R.id.eighthET);
         ninthET = (EditText) root.findViewById(R.id.ninthET);
         tenthET = (EditText) root.findViewById(R.id.tenthET);
+//        GratitudeDatabaseHelper dbHelper = GratitudeDatabaseHelper.getInstance(getContext());
+//        gratitudeDatabase = dbHelper.getWritableDatabase();
 
         FloatingActionButton close = (FloatingActionButton) root.findViewById(R.id.grat_close);
         close.setOnClickListener(new View.OnClickListener() {
@@ -68,9 +75,46 @@ public class GratitudeFragment extends Fragment {
             }
         });
 
+        FloatingActionButton save = (FloatingActionButton) root.findViewById(R.id.grat_save);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String userDate = dateET.getText().toString();
+                String firstInput = firstET.getText().toString();
+                String secondInput = secondET.getText().toString();
+                String thirdInput = thirdET.getText().toString();
+                String fourthInput = fourthET.getText().toString();
+                String fifthInput = fifthET.getText().toString();
+                String sixthInput = sixthET.getText().toString();
+                String seventhInput = seventhET.getText().toString();
+                String eighthInput = eighthET.getText().toString();
+                String ninthInput = ninthET.getText().toString();
+                String tenthInput = tenthET.getText().toString();
+
+
+//                GratitudeDatabaseHelper.getInstance(getContext()).addGratitudeCard(new GratitudeCard(userDate, firstInput, secondInput,
+//                        thirdInput, fourthInput, fifthInput, sixthInput, seventhInput, eighthInput,
+//                        ninthInput, tenthInput));
+
+                addGratitudeCard(new GratitudeCard(userDate, firstInput, secondInput,
+                        thirdInput, fourthInput, fifthInput, sixthInput, seventhInput, eighthInput,
+                        ninthInput, tenthInput) );
+                refreshCatList();
+                Intent intent = new Intent(getContext(), GratitudeMainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         return root;
 
     }
 
+    public void addGratitudeCard(GratitudeCard gratCard) {
+        cupboard().withDatabase(GratitudeMainActivity.gratitudeDatabase).put(gratCard);
+    }
+    private void refreshCatList() {
+        GratitudeMainActivity.gratitudeAdapter.notifyDataSetChanged();
+    }
 
 }

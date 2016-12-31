@@ -5,6 +5,9 @@ package nyc.c4q.leighdouglas.ufeed.grateful_card.gratitude_model;
  */
 
 public class GratitudeCard {
+
+    private Long _id;
+
     String first;
     String second;
     String third;
@@ -17,6 +20,31 @@ public class GratitudeCard {
     String tenth;
     String date;
 
+    public GratitudeCard() {
+    }
+
+    public GratitudeCard(String first, String second, String third, String fourth, String fifth, String sixth, String seventh, String eighth, String ninth, String tenth, String date) {
+       // this._id = _id;
+        this.first = first;
+        this.second = second;
+        this.third = third;
+        this.fourth = fourth;
+        this.fifth = fifth;
+        this.sixth = sixth;
+        this.seventh = seventh;
+        this.eighth = eighth;
+        this.ninth = ninth;
+        this.tenth = tenth;
+        this.date = date;
+    }
+
+    public Long get_id() {
+        return _id;
+    }
+
+    public void set_id(Long _id) {
+        this._id = _id;
+    }
 
     public String getDate() {
         return date;
@@ -82,13 +110,14 @@ public class GratitudeCard {
         this.seventh = seventh;
     }
 
-    public String geteighth() {
+    public String getEighth() {
         return eighth;
     }
 
-    public void seteighth(String eighth) {
+    public void setEighth(String eighth) {
         this.eighth = eighth;
     }
+
 
     public String getNinth() {
         return ninth;
