@@ -1,8 +1,10 @@
-package nyc.c4q.leighdouglas.ufeed;
+package nyc.c4q.leighdouglas.ufeed.book_card;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+
+import nyc.c4q.leighdouglas.ufeed.R;
 
 public class BookNotes extends AppCompatActivity {
 

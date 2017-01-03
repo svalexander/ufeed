@@ -26,8 +26,7 @@ public class GratitudeMainActivity extends AppCompatActivity {
 
     List<GratitudeCard> gratefulList = new ArrayList<>();
     RecyclerView gratitudeRV;
-    static GratitudeCardAdapter gratitudeAdapter;
-
+    public static GratitudeCardAdapter gratitudeAdapter;
     public static SQLiteDatabase gratitudeDatabase;
 
     @Override
@@ -57,7 +56,6 @@ public class GratitudeMainActivity extends AppCompatActivity {
                 fab.setVisibility(View.INVISIBLE);
             }
         });
-
 
 
     }

@@ -16,7 +16,6 @@ public class GratitudeDatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "gratitude.db";
     private static final int DATABASE_VERSION = 1;
-//    SQLiteDatabase gratitudeDatabase;
 
     // make your database instance a singleton instance across the entire application's lifecycle.
     private static GratitudeDatabaseHelper instance;
@@ -49,9 +48,7 @@ public class GratitudeDatabaseHelper extends SQLiteOpenHelper {
         // this will ensure that all tables are created
         cupboard().withDatabase(db).createTables();
         // add indexes and other database tweaks in this method if you want
-        //instantiates database...do i need to do this?
-//        GratitudeDatabaseHelper dbHelper = GratitudeDatabaseHelper.getInstance(this);
-//        gratitudeDatabase = dbHelper.getWritableDatabase();
+
 
     }
 
@@ -62,10 +59,4 @@ public class GratitudeDatabaseHelper extends SQLiteOpenHelper {
         cupboard().withDatabase(db).upgradeTables();
         // do migration work if you have an alteration to make to your schema here
     }
-
-
-
-//    public void addGratitudeCard(GratitudeCard gratCard) {
-//        cupboard().withDatabase(gratitudeDatabase).put(gratCard);
-//    }
 }

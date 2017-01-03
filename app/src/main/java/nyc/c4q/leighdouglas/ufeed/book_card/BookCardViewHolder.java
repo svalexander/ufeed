@@ -1,11 +1,12 @@
-package nyc.c4q.leighdouglas.ufeed;
+package nyc.c4q.leighdouglas.ufeed.book_card;
 
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import nyc.c4q.leighdouglas.ufeed.R;
 
 
 /**
@@ -29,16 +30,19 @@ public class BookCardViewHolder extends RecyclerView.ViewHolder {
         return inflater.inflate(R.layout.recycled_card, (ViewGroup) parent, false);
     }
 
-    public void bind(final String book) {
-        bookTitleView.setText(book); //passes in the titles in the book arrayList
-        bookTitleView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(view.getContext(), BookActivity.class);
-                intent.putExtra(BookActivity.TAG, book);
-                view.getContext().startActivity(intent);
-            }
-        });
+    public void bind(Book book) {
+
+        bookTitleView.setText(book.getTitle()); //passes in the titles in the book arrayList
+
+        //don't delete onClick code below, read and revise it
+//        bookTitleView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(view.getContext(), BookActivity.class);
+//                intent.putExtra(BookActivity.TAG, book);
+//                view.getContext().startActivity(intent);
+//            }
+//        });
     }
 
 }

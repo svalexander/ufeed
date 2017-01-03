@@ -1,4 +1,4 @@
-package nyc.c4q.leighdouglas.ufeed.grateful_card;
+package nyc.c4q.leighdouglas.ufeed;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import nyc.c4q.leighdouglas.ufeed.R;
+import nyc.c4q.leighdouglas.ufeed.grateful_card.GratitudeMainActivity;
 
 /**
  * Created by shannonalexander-navarro on 12/29/16.

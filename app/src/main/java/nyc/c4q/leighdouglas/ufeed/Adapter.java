@@ -6,8 +6,6 @@ import android.view.ViewGroup;
 import java.util.Arrays;
 import java.util.List;
 
-import nyc.c4q.leighdouglas.ufeed.grateful_card.GratitudeViewHolder;
-
 /**
  * Created by leighdouglas on 10/30/16.
  */

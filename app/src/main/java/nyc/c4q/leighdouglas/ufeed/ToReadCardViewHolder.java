@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import nyc.c4q.leighdouglas.ufeed.book_card.BookRecyclerContentActivity;
+
 /**
  * Created by shannonalexander-navarro on 11/12/16.
  */

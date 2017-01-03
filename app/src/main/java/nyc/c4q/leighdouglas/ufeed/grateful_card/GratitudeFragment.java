@@ -34,8 +34,6 @@ public class GratitudeFragment extends Fragment {
     private EditText ninthET;
     private EditText tenthET;
     CoordinatorLayout layout;
-  //  GratitudeDatabaseHelper dbHelper;
-//    private SQLiteDatabase gratitudeDatabase;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -63,8 +61,6 @@ public class GratitudeFragment extends Fragment {
         eighthET = (EditText) root.findViewById(R.id.eighthET);
         ninthET = (EditText) root.findViewById(R.id.ninthET);
         tenthET = (EditText) root.findViewById(R.id.tenthET);
-//        GratitudeDatabaseHelper dbHelper = GratitudeDatabaseHelper.getInstance(getContext());
-//        gratitudeDatabase = dbHelper.getWritableDatabase();
 
         FloatingActionButton close = (FloatingActionButton) root.findViewById(R.id.grat_close);
         close.setOnClickListener(new View.OnClickListener() {
@@ -91,11 +87,6 @@ public class GratitudeFragment extends Fragment {
                 String eighthInput = eighthET.getText().toString();
                 String ninthInput = ninthET.getText().toString();
                 String tenthInput = tenthET.getText().toString();
-
-
-//                GratitudeDatabaseHelper.getInstance(getContext()).addGratitudeCard(new GratitudeCard(userDate, firstInput, secondInput,
-//                        thirdInput, fourthInput, fifthInput, sixthInput, seventhInput, eighthInput,
-//                        ninthInput, tenthInput));
 
                 addGratitudeCard(new GratitudeCard(userDate, firstInput, secondInput,
                         thirdInput, fourthInput, fifthInput, sixthInput, seventhInput, eighthInput,
