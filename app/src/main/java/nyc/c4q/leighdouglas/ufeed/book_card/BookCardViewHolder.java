@@ -42,7 +42,7 @@ public class BookCardViewHolder extends RecyclerView.ViewHolder {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(view.getContext(), BookActivity.class);
-                intent.putExtra(BookActivity.TAG, book);
+                intent.putExtra(BookActivity.TAG, book.getTitle());
                 view.getContext().startActivity(intent);
             }
         });
