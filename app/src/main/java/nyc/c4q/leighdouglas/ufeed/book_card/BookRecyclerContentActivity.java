@@ -72,4 +72,8 @@ public class BookRecyclerContentActivity extends AppCompatActivity {
 
         return booklist;
     }
+
+    public static void removeBook(Book book) {
+        cupboard().withDatabase(bookDatabase).delete(book);
+    }
 }

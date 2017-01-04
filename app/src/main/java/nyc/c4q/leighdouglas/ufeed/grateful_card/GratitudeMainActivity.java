@@ -77,7 +77,7 @@ public class GratitudeMainActivity extends AppCompatActivity {
         return gratefulList;
     }
 
-    private void removeCat(GratitudeCard gratitudeCard) {
+    private void removeGratitudeCard(GratitudeCard gratitudeCard) {
         cupboard().withDatabase(gratitudeDatabase).delete(gratitudeCard);
     }
 

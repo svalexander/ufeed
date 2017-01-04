@@ -1,9 +1,11 @@
 package nyc.c4q.leighdouglas.ufeed.book_card;
 
+import java.io.Serializable;
+
 /**
  * Created by shannonalexander-navarro on 11/5/16.
  */
-public class Book {
+public class Book implements Serializable {
 
     private Long _id;
     String title;

@@ -72,7 +72,7 @@ public class AddBookActivity extends AppCompatActivity {
         cupboard().withDatabase(BookRecyclerContentActivity.bookDatabase).put(book);
 
     }
-    private void refreshUsersBooks() {
+    public static void refreshUsersBooks() {
         BookRecyclerContentActivity.adapter.notifyDataSetChanged();
     }
 
