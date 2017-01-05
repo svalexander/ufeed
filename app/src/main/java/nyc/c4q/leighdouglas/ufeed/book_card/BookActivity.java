@@ -1,5 +1,6 @@
 package nyc.c4q.leighdouglas.ufeed.book_card;
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,6 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import nyc.c4q.leighdouglas.ufeed.R;
+
+import static nl.qbusict.cupboard.CupboardFactory.cupboard;
+import static nyc.c4q.leighdouglas.ufeed.book_card.BookRecyclerContentActivity.bookDatabase;
 
 public class BookActivity extends AppCompatActivity {
 
@@ -66,16 +70,21 @@ public class BookActivity extends AppCompatActivity {
             //want to save the editText input and the buttonClick
             @Override
             public void onClick(View v) {
-                //this temporarily saves the notes, but not if you navigate away
-                inputNotes = userNotes.getText().toString();
-                savedNotes.setText(inputNotes);
 
-                SharedPreferences.Editor editor = getSharedPreferences(SHARED_PREF, MODE_PRIVATE).edit();
-                editor.putString(getIntent().getExtras().getString(TAG), inputNotes);
-                editor.apply();
+                inputNotes = userNotes.getText().toString();
+
+                if ( !inputNotes.isEmpty() ) { //this line isn't achieving what i want
+
+                    savedNotes.setText(inputNotes);
+
+                    SharedPreferences.Editor editor = getSharedPreferences(SHARED_PREF, MODE_PRIVATE).edit();
+                    editor.putString(getIntent().getExtras().getString(TAG), inputNotes);
+                    editor.apply();
+                }
 
             }
         });
+
 
     }
 
@@ -109,5 +118,14 @@ public class BookActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putString("notes", userNotes.getText().toString());
+    }
+
+    private void upgradeNotes(Book book){
+
+        cupboard().withDatabase(bookDatabase).get(book);
+        ContentValues notesValue = new ContentValues(1);
+        notesValue.put("notes", inputNotes);
+        cupboard().withDatabase(bookDatabase).update(Book.class, notesValue, "notes", inputNotes);
+
     }
 }
