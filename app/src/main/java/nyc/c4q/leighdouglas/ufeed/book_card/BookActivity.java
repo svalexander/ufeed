@@ -22,6 +22,9 @@ public class BookActivity extends AppCompatActivity {
     private Button toReadBtn;
     private Button doneBtn;
     private Button reReadBtn;
+    private int readBtnValue;
+    private int doneBtnValue;
+    private int rereadBtnValue;
 
     TextView thisBookTitleTV;
     EditText userNotes;
@@ -71,9 +74,10 @@ public class BookActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                //TODO: change this so it upgrades the table
                 inputNotes = userNotes.getText().toString();
 
-                if ( !inputNotes.isEmpty() ) { //this line isn't achieving what i want
+                if ( !inputNotes.isEmpty() ) {
 
                     savedNotes.setText(inputNotes);
 
@@ -86,7 +90,25 @@ public class BookActivity extends AppCompatActivity {
         });
 
 
+//        toReadBtn = (Button) findViewById(R.id.to_read);
+//        doneBtn = (Button) findViewById(R.id.done);
+//        reReadBtn = (Button) findViewById(R.id.re_read);
+//
+//        toReadBtn.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                toReadBtn.setPressed(true);
+//                toReadBtn.setBackgroundResource(R.drawable.button_change);
+//                doneBtn.setBackgroundResource(R.drawable.corners);
+//                reReadBtn.setBackgroundResource(R.drawable.corners);
+//                return true;
+//            }
+//        });
     }
+
+
+
+
 
     public void onClick(View v) {
 
@@ -94,10 +116,23 @@ public class BookActivity extends AppCompatActivity {
         doneBtn = (Button) findViewById(R.id.done);
         reReadBtn = (Button) findViewById(R.id.re_read);
 
+//        toReadBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                toReadBtn.setPressed(true);
+//                toReadBtn.setBackgroundResource(R.drawable.button_change);
+//                doneBtn.setBackgroundResource(R.drawable.corners);
+//                reReadBtn.setBackgroundResource(R.drawable.corners);
+//            }
+//        });
+
+        readBtnValue = R.drawable.button_change;
+
+
         switch (v.getId()) {
 
             case R.id.to_read:
-                toReadBtn.setBackgroundResource(R.drawable.button_change);
+                toReadBtn.setBackgroundResource(readBtnValue);
                 doneBtn.setBackgroundResource(R.drawable.corners);
                 reReadBtn.setBackgroundResource(R.drawable.corners);
                 break;
@@ -118,8 +153,16 @@ public class BookActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putString("notes", userNotes.getText().toString());
+      //  savedInstanceState.putBundle("button", toReadBtn);
+     //   savedInstanceState.pu
+//        toReadBtn = (Button) findViewById(R.id.to_read);
+//        doneBtn = (Button) findViewById(R.id.done);
+//        reReadBtn = (Button) findViewById(R.id.re_read);
+
+
     }
 
+//    ToDO: make sure this works
     private void upgradeNotes(Book book){
 
         cupboard().withDatabase(bookDatabase).get(book);
