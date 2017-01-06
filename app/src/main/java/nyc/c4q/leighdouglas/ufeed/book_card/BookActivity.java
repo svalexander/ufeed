@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import nyc.c4q.leighdouglas.ufeed.MainActivity;
 import nyc.c4q.leighdouglas.ufeed.R;
 
 import static nl.qbusict.cupboard.CupboardFactory.cupboard;
@@ -86,6 +87,15 @@ public class BookActivity extends AppCompatActivity {
                     editor.apply();
                 }
 
+            }
+        });
+
+        FloatingActionButton home = (FloatingActionButton) findViewById(R.id.book_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homeIntent = new Intent(BookActivity.this, MainActivity.class);
+                startActivity(homeIntent);
             }
         });
 

@@ -26,10 +26,6 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".book_card.BookNotes"
-            android:label="@string/title_activity_book_two"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".book_card.AddBookActivity"
             android:label="@string/title_activity_add_book"
             android:theme="@style/AppTheme.NoActionBar" />

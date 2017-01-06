@@ -6,11 +6,19 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:context="nyc.c4q.leighdouglas.ufeed.book_card.BookRecyclerContentActivity">
-
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/book_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_margin="@dimen/fab_margin"
+        app:fabSize="mini"
+        android:src="@drawable/home"/>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/this_book_title"

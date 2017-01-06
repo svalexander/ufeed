@@ -1,5 +1,6 @@
 package nyc.c4q.leighdouglas.ufeed.grateful_card;
 
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nl.qbusict.cupboard.QueryResultIterable;
+import nyc.c4q.leighdouglas.ufeed.MainActivity;
 import nyc.c4q.leighdouglas.ufeed.R;
 import nyc.c4q.leighdouglas.ufeed.grateful_card.gratitude_model.GratitudeCard;
 
@@ -58,6 +60,14 @@ public class GratitudeMainActivity extends AppCompatActivity {
         });
 
 
+        FloatingActionButton home = (FloatingActionButton) findViewById(R.id.grat_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GratitudeMainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

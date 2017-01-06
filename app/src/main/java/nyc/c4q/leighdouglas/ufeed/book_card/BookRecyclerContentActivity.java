@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import nl.qbusict.cupboard.QueryResultIterable;
+import nyc.c4q.leighdouglas.ufeed.MainActivity;
 import nyc.c4q.leighdouglas.ufeed.R;
 
 import static nl.qbusict.cupboard.CupboardFactory.cupboard;
@@ -40,12 +41,9 @@ public class BookRecyclerContentActivity extends AppCompatActivity {
 
         recyclerView = (RecyclerView) findViewById(R.id.book_recycler_view);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this)); //determines how content shows up
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new BookAdapter(booklist);
         recyclerView.setAdapter(adapter);
-      //  Set<String> books = PreferenceManager.getDefaultSharedPreferences(this).getStringSet("book", new HashSet<String>()); //get the books here in bookrecycler
-      //  booklist.addAll(books);
-      //  recyclerView.setAdapter(adapter = new BookAdapter(booklist));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -53,6 +51,15 @@ public class BookRecyclerContentActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(BookRecyclerContentActivity.this, AddBookActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        FloatingActionButton home = (FloatingActionButton) findViewById(R.id.book_content_home);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homeIntent = new Intent(BookRecyclerContentActivity.this, MainActivity.class);
+                startActivity(homeIntent);
             }
         });
     }
