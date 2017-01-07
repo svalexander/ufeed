@@ -103,13 +103,6 @@
                 android:text="@string/previous"
                 android:background="@drawable/corners"/>
 
-            <Button
-                android:id="@+id/next"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/next"
-                android:background="@drawable/corners"/>
-
         </LinearLayout>
 
         <LinearLayout
