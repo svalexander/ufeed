@@ -13,7 +13,8 @@ public class NewsCardViewHolder extends RecyclerView.ViewHolder {
 
     private static View inflateView(ViewGroup parent){
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        return inflater.inflate(R.layout.activity_news, parent, false);
+        //keep an eye on this, might be the wrong thing to inflate?
+        return inflater.inflate(R.layout.news_fragment, parent, false);
     }
     public NewsCardViewHolder(ViewGroup parent) {
         super(inflateView(parent));
