@@ -11,8 +11,9 @@ import java.util.List;
  */
 
 public class Adapter extends RecyclerView.Adapter {
+
     private List<Integer> mData = Arrays.asList(
-            1, 2, 3, 4 );
+            1, 2, 3, 4, 5);
 
     @Override
     public int getItemViewType(int position) {
@@ -25,6 +26,8 @@ public class Adapter extends RecyclerView.Adapter {
                 return 3;
             case 3:
                 return 4;
+            case 4:
+                return 5;
             default:
 
         }
@@ -41,6 +44,8 @@ public class Adapter extends RecyclerView.Adapter {
                 return new ToReadCardViewHolder(parent);
             case 3:
                 return new GratitudeViewHolder(parent);
+            case 4:
+                return new NewsCardViewHolder(parent);
             default:
                 return new LeighViewHolder(parent);
         }
@@ -61,7 +66,9 @@ public class Adapter extends RecyclerView.Adapter {
                 break;
             case 3:
                 GratitudeViewHolder thirdHolder = (GratitudeViewHolder) holder;
-
+                break;
+            case 4:
+                NewsCardViewHolder fourthHolder = (NewsCardViewHolder) holder;
                 break;
         }
     }

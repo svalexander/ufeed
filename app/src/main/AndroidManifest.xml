@@ -30,7 +30,8 @@
             android:label="@string/title_activity_add_book"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".book_card.BookActivity" />
-        <activity android:name=".grateful_card.GratitudeMainActivity"></activity>
+        <activity android:name=".grateful_card.GratitudeMainActivity" />
+        <activity android:name=".news_card.NewsActivity"></activity>
     </application>
 
 </manifest>

@@ -48,7 +48,7 @@ public class GratitudeFragment extends Fragment {
         View root = inflater.inflate(R.layout.gratitude_fragment, container, false);
 
         layout = (CoordinatorLayout) root.findViewById(R.id.grat_frag);
-        // promptTV = (TextView) itemView.findViewById(promptTV);
+
 
         dateET = (EditText) root.findViewById(R.id.date);
         firstET = (EditText) root.findViewById(R.id.firstET);
