@@ -1,6 +1,5 @@
 package nyc.c4q.leighdouglas.ufeed.book_card;
 
-import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -85,6 +84,7 @@ public class BookActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = getSharedPreferences(SHARED_PREF, MODE_PRIVATE).edit();
                     editor.putString(getIntent().getExtras().getString(TAG), inputNotes);
                     editor.apply();
+                   // upgradeNotes();
                 }
 
             }
@@ -175,10 +175,12 @@ public class BookActivity extends AppCompatActivity {
 //    ToDO: make sure this works
     private void upgradeNotes(Book book){
 
-        cupboard().withDatabase(bookDatabase).get(book);
-        ContentValues notesValue = new ContentValues(1);
-        notesValue.put("notes", inputNotes);
-        cupboard().withDatabase(bookDatabase).update(Book.class, notesValue, "notes", inputNotes);
+        Book mybook = cupboard().withDatabase(bookDatabase).get(book);
+        mybook.notes = inputNotes;
+//        ContentValues notesValue = new ContentValues(1);
+//        notesValue.put("notes", inputNotes);
+//        cupboard().withDatabase(bookDatabase).update(Book.class, notesValue, "notes", inputNotes);
+        cupboard().withDatabase(bookDatabase).put(mybook);
 
     }
 }

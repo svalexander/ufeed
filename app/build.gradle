@@ -20,7 +20,7 @@ android {
 
     defaultConfig{
 
-        buildConfigField("String", "API_KEY", NewsApiKey)
+        buildConfigField("String", "NEWS_API_KEY", NEWSAPIKEY)
     }
 }
 
